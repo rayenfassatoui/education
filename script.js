@@ -201,17 +201,202 @@ window.addEventListener('click', (e) => {
     }
 });
 
+// Test Users Database
+const testUsers = {
+    'student@edulearn.com': {
+        password: 'Student123!',
+        name: 'John Student',
+        role: 'student',
+        plan: 'free'
+    },
+    'pro.user@edulearn.com': {
+        password: 'ProUser123!',
+        name: 'Sarah Pro',
+        role: 'student',
+        plan: 'pro'
+    },
+    'web.instructor@edulearn.com': {
+        password: 'WebDev123!',
+        name: 'David Webb',
+        role: 'instructor',
+        course: 'Web Development'
+    },
+    'data.instructor@edulearn.com': {
+        password: 'DataSci123!',
+        name: 'Emma Data',
+        role: 'instructor',
+        course: 'Data Science'
+    },
+    'admin@edulearn.com': {
+        password: 'Admin123!',
+        name: 'Admin User',
+        role: 'admin'
+    }
+};
+
 // Form submission handling
 document.getElementById('signinForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    // Add your sign in logic here
-    alert('Sign in functionality will be implemented soon!');
+    const email = e.target.querySelector('input[type="email"]').value;
+    const password = e.target.querySelector('input[type="password"]').value;
+
+    // Check credentials
+    if (testUsers[email] && testUsers[email].password === password) {
+        const user = testUsers[email];
+        // Store user session
+        sessionStorage.setItem('currentUser', JSON.stringify({
+            email,
+            name: user.name,
+            role: user.role,
+            plan: user.plan
+        }));
+        
+        // Show success message
+        alert(`Welcome back, ${user.name}!`);
+        
+        // Close modal
+        closeModalFunc();
+        
+        // Update UI based on user role
+        updateUIForUser(user);
+    } else {
+        alert('Invalid email or password. Please try again.');
+    }
 });
 
 document.getElementById('signupForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    // Add your sign up logic here
-    alert('Sign up functionality will be implemented soon!');
+    const name = e.target.querySelector('input[type="text"]').value;
+    const email = e.target.querySelector('input[type="email"]').value;
+    const password = e.target.querySelector('input[type="password"]').value;
+    const confirmPassword = e.target.querySelectorAll('input[type="password"]')[1].value;
+
+    if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+    }
+
+    if (testUsers[email]) {
+        alert('This email is already registered. Please sign in instead.');
+        return;
+    }
+
+    // Add new user to testUsers
+    testUsers[email] = {
+        password: password,
+        name: name,
+        role: 'student', // Default role for new users
+        plan: 'free'    // Default plan for new users
+    };
+
+    // Show success message with the new user's details
+    alert(`Account created successfully!\nName: ${name}\nEmail: ${email}\nRole: Student\nPlan: Free\n\nPlease sign in with your credentials.`);
+    
+    // Switch to sign in form
+    closeModalFunc();
+    showSignin();
+});
+
+// Update UI based on user role
+function updateUIForUser(user) {
+    const navAuth = document.querySelector('.nav-auth');
+    const pricingButtons = document.querySelectorAll('.pricing-button');
+    const enrollButtons = document.querySelectorAll('.enroll-button');
+
+    // Update auth buttons with enhanced user menu
+    navAuth.innerHTML = `
+        <div class="user-menu">
+            <span>Welcome, ${user.name}</span>
+            <button class="signout-btn" onclick="handleSignOut()">
+                <i class="fas fa-sign-out-alt"></i> Sign Out
+            </button>
+        </div>
+    `;
+
+    // Update pricing buttons based on plan
+    if (user.role === 'student') {
+        pricingButtons.forEach(button => {
+            if (button.parentElement.querySelector('h3').textContent.toLowerCase() === user.plan) {
+                button.textContent = 'Current Plan';
+                button.disabled = true;
+            }
+        });
+    }
+
+    // Update enroll buttons for instructors
+    if (user.role === 'instructor') {
+        enrollButtons.forEach(button => {
+            const courseCard = button.closest('.course-card');
+            if (courseCard.querySelector('h3').textContent === user.course) {
+                button.textContent = 'Manage Course';
+            }
+        });
+    }
+}
+
+// Enhanced sign out functionality
+function handleSignOut() {
+    const confirmSignOut = confirm('Are you sure you want to sign out?');
+    
+    if (confirmSignOut) {
+        // Add fade-out animation to user menu
+        const userMenu = document.querySelector('.user-menu');
+        userMenu.style.opacity = '0';
+        userMenu.style.transform = 'translateY(-10px)';
+        
+        // Delay the actual sign-out to show animation
+        setTimeout(() => {
+            sessionStorage.removeItem('currentUser');
+            
+            // Show sign-out message
+            const message = document.createElement('div');
+            message.className = 'signout-message';
+            message.textContent = 'Signed out successfully!';
+            document.body.appendChild(message);
+            
+            // Remove message and reload after delay
+            setTimeout(() => {
+                message.remove();
+                location.reload();
+            }, 1500);
+        }, 300);
+    }
+}
+
+// Add styles for sign-out message
+const style = document.createElement('style');
+style.textContent = `
+    .signout-message {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--accent-color);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        animation: slideIn 0.3s ease forwards;
+        z-index: 1000;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// Check for existing session on page load
+window.addEventListener('DOMContentLoaded', () => {
+    const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    if (currentUser) {
+        updateUIForUser(currentUser);
+    }
 });
 
 // Active link highlighting

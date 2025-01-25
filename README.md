@@ -81,4 +81,32 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Font Awesome for icons
 - AOS library for scroll animations
-- All the amazing students who provided testimonials 
+- All the amazing students who provided testimonials
+
+## Test Credentials
+
+Use these demo accounts to test the authentication system:
+
+### Student Accounts
+1. **Free Plan User**
+   - Email: student@edulearn.com
+   - Password: Student123!
+
+2. **Pro Plan User**
+   - Email: pro.user@edulearn.com
+   - Password: ProUser123!
+
+### Instructor Accounts
+1. **Web Development Instructor**
+   - Email: web.instructor@edulearn.com
+   - Password: WebDev123!
+
+2. **Data Science Instructor**
+   - Email: data.instructor@edulearn.com
+   - Password: DataSci123!
+
+### Admin Account
+- Email: admin@edulearn.com
+- Password: Admin123!
+
+*Note: These are demo credentials for testing purposes only. In a production environment, always use secure, unique passwords.* 
