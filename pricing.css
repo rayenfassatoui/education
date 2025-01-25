@@ -1,0 +1,194 @@
+/* Pricing Hero Section */
+.pricing-hero {
+    min-height: 50vh;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #1a2639 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 5% 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSI3NTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiIGlkPSJhIj48c3RvcCBzdG9wLWNvbG9yPSIjRkZGIiBzdG9wLW9wYWNpdHk9Ii4wNSIgb2Zmc2V0PSIwJSIvPjxzdG9wIHN0b3AtY29sb3I9IiNGRkYiIHN0b3Atb3BhY2l0eT0iLjEiIG9mZnNldD0iMTAwJSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxwYXRoIGQ9Ik0wIDc1MEwxNDQwIDBIMFY3NTBaIiBmaWxsPSJ1cmwoI2EpIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4=');
+    opacity: 0.1;
+}
+
+.pricing-hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+}
+
+.pricing-hero h1 {
+    color: var(--white);
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.pricing-hero p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+/* Pricing Section */
+.pricing-section {
+    padding: 6rem 5%;
+    background: linear-gradient(135deg, var(--light-gray) 0%, #ffffff 100%);
+}
+
+.pricing-section .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.pricing-section .section-header h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.pricing-section .section-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* FAQ Section */
+.pricing-faq {
+    padding: 6rem 5%;
+    background: var(--white);
+}
+
+.pricing-faq .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.pricing-faq .section-header h2 {
+    font-size: 2.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.pricing-faq .section-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.pricing-faq .faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Contact Section */
+.pricing-contact {
+    padding: 6rem 5%;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #1a2639 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.pricing-contact h2 {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.pricing-contact p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.contact-button {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    background: var(--white);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.contact-button:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .pricing-hero h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-hero {
+        min-height: 40vh;
+        padding: 100px 5% 40px;
+    }
+
+    .pricing-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .pricing-hero p {
+        font-size: 1.1rem;
+    }
+
+    .pricing-section .section-header h2,
+    .pricing-faq .section-header h2,
+    .pricing-contact h2 {
+        font-size: 2rem;
+    }
+
+    .pricing-section,
+    .pricing-faq,
+    .pricing-contact {
+        padding: 4rem 5%;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+[data-aos="fade-up"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+} 

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Learn Anytime, Anywhere</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                EduLearn
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+            
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <button class="signin-btn">Sign In</button>
+                <button class="signup-btn">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Auth Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <!-- Sign In Form -->
+            <div class="auth-form signin-form">
+                <h2>Welcome Back</h2>
+                <p>Sign in to continue learning</p>
+                <form id="signinForm">
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-options">
+                        <label>
+                            <input type="checkbox"> Remember me
+                        </label>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="auth-button">Sign In</button>
+                    <p class="switch-form">Don't have an account? <a href="#" class="switch-to-signup">Sign Up</a></p>
+                </form>
+            </div>
+            <!-- Sign Up Form -->
+            <div class="auth-form signup-form hidden">
+                <h2>Create Account</h2>
+                <p>Join our learning community</p>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="auth-button">Sign Up</button>
+                    <p class="switch-form">Already have an account? <a href="#" class="switch-to-signin">Sign In</a></p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text fade-in">
+                <h1 class="animate-title">Learn Anytime, Anywhere</h1>
+                <p class="animate-subtitle">Unlock your potential with our expert-led online courses</p>
+                <div class="hero-buttons">
+                    <button class="cta-button animate-button">Get Started</button>
+                    <button class="secondary-button animate-button">View Courses</button>
+                </div>
+            </div>
+            <div class="hero-image fade-in">
+                <img src="./img/hero.png" alt="Education Illustration">
+                <div class="floating-card card-1">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>1000+ Courses</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-users"></i>
+                    <span>50k+ Students</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-star"></i>
+                    <span>4.9 Rating</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section id="courses" class="courses">
+        <div class="section-header">
+            <h2>Featured Courses</h2>
+            <p>Explore our most popular courses and start your journey</p>
+        </div>
+        <div class="course-grid">
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="./img/WebDevelopment.jpeg" alt="Web Development">
+                    <div class="course-overlay">
+                        <span class="course-level"><i class="fas fa-signal"></i> Beginner</span>
+                        <span class="course-duration"><i class="fas fa-clock"></i> 12 Weeks</span>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <div class="course-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <h3>Modern Web Development</h3>
+                    <p>Master modern web development with HTML, CSS, and JavaScript. Build responsive websites and dynamic web applications.</p>
+                    <div class="course-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>2.3k Students</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-star"></i>
+                            <span>4.8 (349 Reviews)</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-price">$99.99</div>
+                        <button class="enroll-button">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="./img/data.jpeg" alt="Data Science">
+                    <div class="course-overlay">
+                        <span class="course-level"><i class="fas fa-signal"></i> Intermediate</span>
+                        <span class="course-duration"><i class="fas fa-clock"></i> 16 Weeks</span>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <div class="course-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">ML</span>
+                        <span class="tag">Statistics</span>
+                    </div>
+                    <h3>Data Science Fundamentals</h3>
+                    <p>Learn data analysis, visualization, and machine learning. Master Python and essential data science tools.</p>
+                    <div class="course-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>1.8k Students</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-star"></i>
+                            <span>4.9 (287 Reviews)</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-price">$129.99</div>
+                        <button class="enroll-button">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="./img/digital.jpeg" alt="Digital Marketing">
+                    <div class="course-overlay">
+                        <span class="course-level"><i class="fas fa-signal"></i> All Levels</span>
+                        <span class="course-duration"><i class="fas fa-clock"></i> 10 Weeks</span>
+                    </div>
+                </div>
+                <div class="course-content">
+                    <div class="course-tags">
+                        <span class="tag">SEO</span>
+                        <span class="tag">Social Media</span>
+                        <span class="tag">Analytics</span>
+                    </div>
+                    <h3>Digital Marketing Mastery</h3>
+                    <p>Master SEO, social media, and content marketing strategies. Learn to grow your online presence effectively.</p>
+                    <div class="course-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-user-graduate"></i>
+                            <span>1.5k Students</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-star"></i>
+                            <span>4.7 (203 Reviews)</span>
+                        </div>
+                    </div>
+                    <div class="course-footer">
+                        <div class="course-price">$89.99</div>
+                        <button class="enroll-button">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="courses-cta">
+            <button class="view-all-button">View All Courses <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="section-header">
+            <h2>Choose Your Plan</h2>
+            <p>Select the perfect plan for your learning journey</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card" data-aos="fade-up" data-aos-delay="0">
+                <div class="card-header">
+                <h3>Free</h3>
+                <div class="price">$0<span>/month</span></div>
+                </div>
+                <div class="card-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Access to basic courses</li>
+                        <li><i class="fas fa-check"></i> Limited resources</li>
+                        <li><i class="fas fa-check"></i> Community support</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Certificate of completion</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Priority support</li>
+                </ul>
+                </div>
+                <button class="pricing-button">Start Free</button>
+            </div>
+
+            <div class="pricing-card featured" data-aos="fade-up" data-aos-delay="200">
+                <div class="popular-badge">Most Popular</div>
+                <div class="card-header">
+                    <h3>Pro</h3>
+                <div class="price">$29<span>/month</span></div>
+                </div>
+                <div class="card-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Access to all courses</li>
+                        <li><i class="fas fa-check"></i> Unlimited resources</li>
+                        <li><i class="fas fa-check"></i> Community support</li>
+                        <li><i class="fas fa-check"></i> Certificate of completion</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                </ul>
+                </div>
+                <button class="pricing-button featured">Get Started</button>
+            </div>
+
+            <div class="pricing-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="card-header">
+                    <h3>Enterprise</h3>
+                    <div class="price">$99<span>/month</span></div>
+                </div>
+                <div class="card-features">
+                    <ul>
+                        <li><i class="fas fa-check"></i> Everything in Pro</li>
+                        <li><i class="fas fa-check"></i> Custom learning paths</li>
+                        <li><i class="fas fa-check"></i> Team collaboration</li>
+                        <li><i class="fas fa-check"></i> Advanced analytics</li>
+                        <li><i class="fas fa-check"></i> Dedicated support</li>
+                </ul>
+                </div>
+                <button class="pricing-button">Contact Sales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-header">
+        <h2>What Our Students Say</h2>
+            <p>Hear from our successful learners around the world</p>
+        </div>
+        <div class="testimonial-container">
+            <div class="testimonial-track">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                <div class="testimonial-content">
+                        <p>"The courses here transformed my career. The instructors are amazing and the content is up-to-date with industry standards!"</p>
+                        <div class="testimonial-author">
+                            <img src="./img/avatar-1.jpg" alt="Sarah Johnson" class="testimonial-img" onerror="this.src='https://ui-avatars.com/api/?name=Sarah+Johnson&background=4a90e2&color=fff'">
+                            <div class="author-info">
+                    <h4>Sarah Johnson</h4>
+                                <p class="role">Web Developer at Google</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-right"></i>
+            </div>
+                <div class="testimonial-content">
+                        <p>"Best investment in my education. The practical projects helped me learn fast and build a strong portfolio that landed me my dream job."</p>
+                        <div class="testimonial-author">
+                            <img src="./img/avatar-2.jpg" alt="Mike Chen" class="testimonial-img" onerror="this.src='https://ui-avatars.com/api/?name=Mike+Chen&background=4a90e2&color=fff'">
+                            <div class="author-info">
+                    <h4>Mike Chen</h4>
+                                <p class="role">Data Scientist at Amazon</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"The community support and mentorship program exceeded my expectations. I've learned more in 3 months than I did in a year on my own."</p>
+                        <div class="testimonial-author">
+                            <img src="./img/avatar-3.jpg" alt="Emma Davis" class="testimonial-img" onerror="this.src='https://ui-avatars.com/api/?name=Emma+Davis&background=4a90e2&color=fff'">
+                            <div class="author-info">
+                                <h4>Emma Davis</h4>
+                                <p class="role">UI/UX Designer at Apple</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"The structured curriculum and hands-on projects made learning complex topics much easier. The instructors are industry experts who truly care about student success."</p>
+                        <div class="testimonial-author">
+                            <img src="./img/avatar-4.jpg" alt="Alex Turner" class="testimonial-img" onerror="this.src='https://ui-avatars.com/api/?name=Alex+Turner&background=4a90e2&color=fff'">
+                            <div class="author-info">
+                                <h4>Alex Turner</h4>
+                                <p class="role">Mobile Developer at Netflix</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"The flexibility of the platform allowed me to balance my full-time job while learning. The interactive exercises and real-world projects were invaluable."</p>
+                        <div class="testimonial-author">
+                            <img src="./img/avatar-5.jpg" alt="Sofia Rodriguez" class="testimonial-img" onerror="this.src='https://ui-avatars.com/api/?name=Sofia+Rodriguez&background=4a90e2&color=fff'">
+                            <div class="author-info">
+                                <h4>Sofia Rodriguez</h4>
+                                <p class="role">Full Stack Developer at Microsoft</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="section-header">
+        <h2>Frequently Asked Questions</h2>
+            <p>Find answers to common questions about our platform</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="0">
+                <div class="faq-question">
+                    <div class="question-text">
+                        <i class="fas fa-circle-question"></i>
+                        <span>How do I get started?</span>
+                    </div>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Simply create an account and choose your desired course. You can start with our free courses to get a feel for our platform. Our user-friendly interface will guide you through the process step by step.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="faq-question">
+                    <div class="question-text">
+                        <i class="fas fa-clock"></i>
+                        <span>Are the courses self-paced?</span>
+                    </div>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, all our courses are self-paced. You can learn at your own convenience and access the content 24/7. Take as much time as you need to complete each module and practice the concepts.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="faq-question">
+                    <div class="question-text">
+                        <i class="fas fa-certificate"></i>
+                        <span>Do I get a certificate?</span>
+                    </div>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, you receive a certificate of completion for each course you finish in our Pro and Enterprise plans. These certificates are industry-recognized and can be shared on your professional profiles.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="faq-question">
+                    <div class="question-text">
+                        <i class="fas fa-users"></i>
+                        <span>Is there a community support?</span>
+                    </div>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely! We have a vibrant community of learners and instructors. You can participate in discussion forums, join study groups, and get help from peers and mentors throughout your learning journey.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="faq-question">
+                    <div class="question-text">
+                        <i class="fas fa-mobile-screen"></i>
+                        <span>Can I access courses on mobile?</span>
+                    </div>
+                    <div class="faq-toggle">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, our platform is fully responsive and optimized for mobile devices. You can access all course content, watch videos, and complete assignments from your smartphone or tablet anywhere, anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-waves">
+            
+        </div>
+        <div class="footer-content">
+            <div class="footer-section brand" data-aos="fade-up" data-aos-delay="0">
+                <div class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                <h3>EduLearn</h3>
+                </div>
+                <p>Empowering learners worldwide with quality education and innovative learning solutions.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section links" data-aos="fade-up" data-aos-delay="100">
+                <h3>Quick Links</h3>
+                <div class="link-columns">
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#courses"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                        <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-chevron-right"></i> Testimonials</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Terms of Service</a></li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="footer-section contact" data-aos="fade-up" data-aos-delay="200">
+                <h3>Contact Info</h3>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@edulearn.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Learning Street, Education City, 12345</p>
+                </div>
+            </div>
+
+            <div class="footer-section newsletter" data-aos="fade-up" data-aos-delay="300">
+                <h3>Newsletter</h3>
+                <p>Subscribe to our newsletter for updates and special offers.</p>
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-line"></div>
+            <p>&copy; 2025 EduLearn. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <span class="separator">•</span>
+                <a href="#">Terms of Service</a>
+                <span class="separator">•</span>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+</html> 
